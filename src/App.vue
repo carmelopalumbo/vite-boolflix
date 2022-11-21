@@ -39,6 +39,7 @@ export default {
           params: {
             api_key: store.api_key,
             query: store.query,
+            language: store.language,
           },
         })
         .then((result) => {

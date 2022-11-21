@@ -7,6 +7,7 @@ export default {
     titleMovies: String,
     originalTitle: String,
     overview: String,
+    language: String,
   },
   methods: {
     getImg() {
@@ -25,11 +26,16 @@ export default {
     <div class="info-box">
       <p v-if="titleSeries"><strong>Titolo:</strong>{{ titleSeries }}</p>
       <p v-else><strong>Titolo:</strong>{{ titleMovies }}</p>
-
-      <p v-if="originalTitle">
+      <p v-show="originalTitle">
         <strong>Titolo originale:</strong>{{ originalTitle }}
       </p>
-      <p><strong>Lingua:</strong> TEST</p>
+
+      <!-- else not working -->
+      <strong>
+        LINGUA: <span v-if="language" :class="'fi fi-' + language"></span>
+        <span v-else>unknown</span>
+      </strong>
+
       <p><strong>Voto:</strong> TEST</p>
       <p><strong>Trama:</strong> {{ overview }}</p>
     </div>

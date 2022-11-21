@@ -30,6 +30,7 @@ export default {
             :originalTitle="card.original_title"
             :titleMovies="card.title"
             :overview="card.overview"
+            :language="card.original_language"
           />
         </div>
       </div>
@@ -48,6 +49,7 @@ export default {
             :image="card.poster_path"
             :titleSeries="card.original_name"
             :overview="card.overview"
+            :language="card.original_language"
           />
         </div>
       </div>
