@@ -23,7 +23,7 @@ export default {
             <input
               type="text"
               class="form-control"
-              placeholder="Search movie and TV Series . . ."
+              placeholder="Cerca Film & Serie TV . . ."
               aria-label="Username"
               aria-describedby="addon-wrapping"
               v-model="store.query"
