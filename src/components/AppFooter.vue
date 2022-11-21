@@ -5,7 +5,21 @@ export default {
 </script>
 
 <template>
-  <h2>FOOTER</h2>
+  <footer>
+    <div class="container mt-5">
+      <div class="row">
+        <h4 class="text-center py-4">Made with &hearts; by Carmelo Palumbo</h4>
+      </div>
+    </div>
+  </footer>
 </template>
 
-<style></style>
+<style lang="scss" scoped>
+@use "../style/partials/var" as *;
+footer {
+  color: $primary-color;
+  .container {
+    border-top: 2px solid $primary-color;
+  }
+}
+</style>

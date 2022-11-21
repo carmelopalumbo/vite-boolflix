@@ -5,7 +5,38 @@ export default {
 </script>
 
 <template>
-  <h2>HEADER</h2>
+  <header>
+    <div class="container">
+      <div class="row d-flex align-items-center pt-5">
+        <div class="col">
+          <img src="/logo-boolflix.png" alt="logo" />
+        </div>
+        <div class="col-3">
+          <div class="input-group flex-nowrap">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search movie and TV Series . . ."
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 </template>
 
-<style></style>
+<style lang="scss" scoped>
+@use "../style/partials/var" as *;
+header {
+  img {
+    width: 200px;
+  }
+  .form-control:focus {
+    border-color: $primary-color;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+      0 0 8px rgba(255, 0, 0, 0.6);
+  }
+}
+</style>
