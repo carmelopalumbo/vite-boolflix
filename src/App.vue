@@ -17,8 +17,8 @@ export default {
   },
 
   methods: {
-    getApiMovies() {
-      store.moviesData = [];
+    getApis() {
+      //movies
       axios
         .get(store.apiUrlMovies, {
           params: {
@@ -27,11 +27,11 @@ export default {
           },
         })
         .then((result) => {
+          store.moviesData = [];
           store.moviesData = result.data.results;
         });
-    },
-    getApiSeries() {
-      store.tvSeriesData = [];
+
+      //tvseries
       axios
         .get(store.apiUrlSeries, {
           params: {
@@ -40,13 +40,14 @@ export default {
           },
         })
         .then((result) => {
+          store.tvSeriesData = [];
           store.tvSeriesData = result.data.results;
         });
     },
   },
 
   mounted() {
-    //this.getApiMovies();
+    //this.getApis();
   },
 };
 </script>
