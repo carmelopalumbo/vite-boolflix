@@ -1,6 +1,7 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
+import AppMain from "./components/AppMain.vue";
 import axios from "axios";
 import { store } from "./data/store.js";
 
@@ -9,6 +10,7 @@ export default {
   components: {
     AppFooter,
     AppHeader,
+    AppMain,
   },
   data() {
     return {
@@ -53,16 +55,8 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
-  <div class="container">
-    <div class="row text-white">
-      <ul>
-        <li v-for="(movie, index) in store.moviesData" :key="index">
-          {{ movie.title }}
-        </li>
-      </ul>
-    </div>
-  </div>
+  <AppHeader @searchButton="getApis()" />
+  <AppMain />
   <AppFooter />
 </template>
 

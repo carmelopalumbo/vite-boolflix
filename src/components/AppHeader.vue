@@ -1,13 +1,20 @@
 <script>
+import { store } from "../data/store.js";
+
 export default {
   name: "AppHeader",
+  data() {
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <header>
     <div class="container">
-      <div class="row d-flex align-items-center pt-5">
+      <div class="row d-flex align-items-center py-5">
         <div class="col-7">
           <img src="/logo-boolflix.png" alt="logo" />
         </div>
@@ -19,11 +26,14 @@ export default {
               placeholder="Search movie and TV Series . . ."
               aria-label="Username"
               aria-describedby="addon-wrapping"
+              v-model="store.query"
             />
           </div>
         </div>
         <div class="col-2">
-          <button type="button" class="btn">SEARCH</button>
+          <button type="button" class="btn" @click="$emit('searchButton')">
+            SEARCH
+          </button>
         </div>
       </div>
     </div>
