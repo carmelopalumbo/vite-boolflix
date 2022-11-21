@@ -27,6 +27,7 @@ export default {
               aria-label="Username"
               aria-describedby="addon-wrapping"
               v-model="store.query"
+              @keyup.enter="$emit('searchButton')"
             />
           </div>
         </div>

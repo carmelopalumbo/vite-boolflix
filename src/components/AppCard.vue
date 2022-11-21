@@ -3,6 +3,10 @@ export default {
   name: "AppCard",
   props: {
     image: String,
+    titleSeries: String,
+    titleMovies: String,
+    originalTitle: String,
+    overview: String,
   },
   methods: {
     getImg() {
@@ -19,10 +23,15 @@ export default {
   <div class="cp-card">
     <img :src="getImg()" alt="" />
     <div class="info-box">
-      <p><strong>Titolo:</strong> TEST</p>
-      <p><strong>Titolo originale:</strong> TEST</p>
+      <p v-if="titleSeries"><strong>Titolo:</strong>{{ titleSeries }}</p>
+      <p v-else><strong>Titolo:</strong>{{ titleMovies }}</p>
+
+      <p v-if="originalTitle">
+        <strong>Titolo originale:</strong>{{ originalTitle }}
+      </p>
+      <p><strong>Lingua:</strong> TEST</p>
       <p><strong>Voto:</strong> TEST</p>
-      <p><strong>Trama:</strong> TEST</p>
+      <p><strong>Trama:</strong> {{ overview }}</p>
     </div>
   </div>
 </template>
@@ -33,8 +42,12 @@ export default {
   width: 250px;
   height: 400px;
   position: relative;
+  transition: 0.3s all;
   &:hover .info-box {
     opacity: 0.97;
+  }
+  &:hover {
+    transform: scale(1.05);
   }
   img {
     width: 100%;
@@ -55,6 +68,15 @@ export default {
     cursor: pointer;
     opacity: 0;
     transition: 0.3s all;
+    padding: 30px;
+    overflow-y: auto;
+    strong {
+      color: $primary-color;
+      padding-right: 5px;
+    }
+    p {
+      color: white;
+    }
   }
 }
 </style>

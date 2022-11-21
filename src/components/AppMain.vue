@@ -16,6 +16,7 @@ export default {
 
 <template>
   <main>
+    <!-- movies -->
     <div class="container pt-5">
       <h2 class="ps-4 fs-1 py-2">FILM</h2>
       <div class="row">
@@ -24,11 +25,17 @@ export default {
           v-for="(card, index) in store.moviesData"
           :key="index"
         >
-          <AppCard :image="card.poster_path" />
+          <AppCard
+            :image="card.poster_path"
+            :originalTitle="card.original_title"
+            :titleMovies="card.title"
+            :overview="card.overview"
+          />
         </div>
       </div>
     </div>
 
+    <!-- tv series -->
     <div class="container pt-5">
       <h2 class="ps-4 fs-1 py-2">SERIE TV</h2>
       <div class="row">
@@ -37,7 +44,11 @@ export default {
           v-for="(card, index) in store.tvSeriesData"
           :key="index"
         >
-          <AppCard :image="card.poster_path" />
+          <AppCard
+            :image="card.poster_path"
+            :titleSeries="card.original_name"
+            :overview="card.overview"
+          />
         </div>
       </div>
     </div>
