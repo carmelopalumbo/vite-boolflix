@@ -1,0 +1,7 @@
+@use './partials/var' as *;
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/@fontsource/bebas-neue/index.css';
+
+body { 
+    font-family: "Bebas Neue", cursive; 
+}
