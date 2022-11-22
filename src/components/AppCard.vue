@@ -62,6 +62,7 @@ export default {
         </star-rating>
       </div>
 
+      <!-- to add a little margin on overlay -->
       <p><strong>Trama:</strong> {{ card.overview || "NON PRESENTE" }}</p>
     </div>
   </div>

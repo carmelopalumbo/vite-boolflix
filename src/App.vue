@@ -20,13 +20,14 @@ export default {
 
   methods: {
     getApis(isWelcome) {
+      if (store.query === "" && !isWelcome) return;
       store.isLoadFilm = false;
       store.isLoadTV = false;
       if (isWelcome) {
         store.apiUrlMovies = "https://api.themoviedb.org/3/movie/popular";
         store.apiUrlSeries = "https://api.themoviedb.org/3/tv/popular";
         store.default = true;
-      } else if (store.query != "") {
+      } else {
         store.apiUrlMovies = "https://api.themoviedb.org/3/search/movie";
         store.apiUrlSeries = "https://api.themoviedb.org/3/search/tv";
         store.default = false;
