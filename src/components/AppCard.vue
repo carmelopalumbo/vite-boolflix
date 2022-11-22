@@ -1,6 +1,10 @@
 <script>
+import StarRating from "vue-star-rating";
 export default {
   name: "AppCard",
+  components: {
+    StarRating,
+  },
   props: {
     image: String,
     titleSeries: String,
@@ -17,6 +21,9 @@ export default {
       }
       return "https://image.tmdb.org/t/p/w300/" + this.image;
     },
+    getRating() {
+      return Math.ceil(this.vote / 2);
+    },
   },
 };
 </script>
@@ -25,8 +32,8 @@ export default {
   <div class="cp-card">
     <img :src="getImg()" alt="" />
     <div class="info-box">
-      <p v-if="titleSeries"><strong>Titolo:</strong>{{ titleSeries }}</p>
-      <p v-else><strong>Titolo:</strong>{{ titleMovies }}</p>
+      <p><strong>Titolo:</strong>{{ titleSeries || titleMovies }}</p>
+
       <p v-show="originalTitle">
         <strong>Titolo originale:</strong>{{ originalTitle }}
       </p>
@@ -37,17 +44,21 @@ export default {
         <span v-else>unknown</span>
       </strong>
 
-      <div class="rating-stars d-flex mt-2">
-        <p><strong>Voto:</strong></p>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
+      <div class="rating-stars d-flex">
+        <p class="pt-3"><strong>Voto:</strong></p>
+        <star-rating
+          :star-size="15"
+          :rating="getRating()"
+          :read-only="true"
+          :active-color="['#DC1A28']"
+          :show-rating="false"
+          :glow="2"
+          inactive-color="white"
+        >
+        </star-rating>
       </div>
 
-      <p v-if="overview"><strong>Trama:</strong> {{ overview }}</p>
-      <p v-else><strong>Trama:</strong> NON PRESENTE</p>
+      <p><strong>Trama:</strong> {{ overview || "NON PRESENTE" }}</p>
     </div>
   </div>
 </template>

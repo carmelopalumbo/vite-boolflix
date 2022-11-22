@@ -26,7 +26,7 @@ export default {
               placeholder="Cerca Film & Serie TV . . ."
               aria-label="Username"
               aria-describedby="addon-wrapping"
-              v-model="store.query"
+              v-model.trim="store.query"
               @keyup.enter="$emit('searchButton')"
             />
           </div>

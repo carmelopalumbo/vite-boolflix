@@ -32,6 +32,10 @@ export default {
         .then((result) => {
           store.moviesData = [];
           store.moviesData = result.data.results;
+        })
+
+        .catch((error) => {
+          console.log("ERROR!");
         });
 
       //tvseries
@@ -46,6 +50,10 @@ export default {
         .then((result) => {
           store.tvSeriesData = [];
           store.tvSeriesData = result.data.results;
+        })
+
+        .catch((error) => {
+          console.log("ERROR!");
         });
     },
   },
