@@ -100,7 +100,7 @@ export default {
     cursor: pointer;
     opacity: 0;
     transition: 0.3s all;
-    padding: 30px;
+    padding: 15px;
     overflow-y: auto;
     strong {
       color: $primary-color;
