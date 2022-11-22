@@ -94,7 +94,7 @@ export default {
         </star-rating>
       </div>
 
-      <!-- to add a little margin on overlay -->
+      <!-- to add a little padding bottom -->
       <p><strong>Trama:</strong> {{ card.overview || "NON PRESENTE" }}</p>
     </div>
   </div>
@@ -124,15 +124,15 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    width: 250px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
     background-color: darken($secondary-color, 5%);
     border: 2px solid $primary-color;
     border-radius: 7px;
     cursor: pointer;
     opacity: 0;
     transition: 0.3s all;
-    padding: 15px;
+    padding: 20px;
     overflow-y: auto;
     strong {
       color: $primary-color;
@@ -141,7 +141,6 @@ export default {
     p {
       color: white;
     }
-
     .main-actors {
       ul {
         list-style: none;
