@@ -45,7 +45,7 @@ export default {
         <strong>Titolo originale:</strong>{{ originalTitle }}
       </p>
 
-      <!-- else not working -->
+      <!-- white flag if flag doesn't exists -->
       <strong> LINGUA: <span :class="getFlags()"></span> </strong>
 
       <div class="rating-stars d-flex">

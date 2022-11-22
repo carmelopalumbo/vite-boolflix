@@ -22,8 +22,12 @@ export default {
     getApis(isWelcome) {
       if (isWelcome) {
         store.apiUrlMovies = "https://api.themoviedb.org/3/movie/popular";
+        store.isLoadTV = true;
       } else {
         store.apiUrlMovies = "https://api.themoviedb.org/3/search/movie";
+        store.default = false;
+        store.isLoadFilm = false;
+        store.isLoadTV = false;
       }
 
       //movies
@@ -36,8 +40,10 @@ export default {
           },
         })
         .then((result) => {
+          store.query = "";
           store.moviesData = [];
           store.moviesData = result.data.results;
+          store.isLoadFilm = true;
         })
 
         .catch((error) => {
@@ -57,6 +63,7 @@ export default {
           .then((result) => {
             store.tvSeriesData = [];
             store.tvSeriesData = result.data.results;
+            store.isLoadTV = true;
           })
 
           .catch((error) => {
