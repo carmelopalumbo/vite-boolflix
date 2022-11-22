@@ -24,6 +24,13 @@ export default {
     getRating() {
       return Math.ceil(this.vote / 2);
     },
+    getFlags() {
+      if (this.language === "en") return "fi fi-gb";
+      else if (this.language === "it") return "fi fi-it";
+      else if (this.language === "de") return "fi fi-de";
+      else if (this.language === "fr") return "fi fi-fr";
+      else return "fi fi-xx";
+    },
   },
 };
 </script>
@@ -39,10 +46,7 @@ export default {
       </p>
 
       <!-- else not working -->
-      <strong>
-        LINGUA: <span v-if="language" :class="'fi fi-' + language"></span>
-        <span v-else>unknown</span>
-      </strong>
+      <strong> LINGUA: <span :class="getFlags()"></span> </strong>
 
       <div class="rating-stars d-flex">
         <p class="pt-3"><strong>Voto:</strong></p>
