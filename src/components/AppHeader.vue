@@ -33,7 +33,14 @@ export default {
         </div>
         <div class="col-2">
           <button type="button" class="btn" @click="$emit('searchButton')">
-            SEARCH
+            CERCA
+          </button>
+          <button
+            type="button"
+            class="btn ms-2"
+            @click="$emit('defaultButton')"
+          >
+            POPOLARI
           </button>
         </div>
       </div>

@@ -80,7 +80,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader @searchButton="getApis(false)" />
+  <AppHeader @searchButton="getApis(false)" @defaultButton="getApis(true)" />
   <AppMain />
   <AppFooter />
 </template>
