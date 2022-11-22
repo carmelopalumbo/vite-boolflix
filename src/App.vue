@@ -24,6 +24,7 @@ export default {
         store.apiUrlMovies = "https://api.themoviedb.org/3/movie/popular";
         store.isLoadTV = true;
       } else {
+        if (store.query === "") return;
         store.apiUrlMovies = "https://api.themoviedb.org/3/search/movie";
         store.default = false;
         store.isLoadFilm = false;
