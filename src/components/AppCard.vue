@@ -8,6 +8,7 @@ export default {
     originalTitle: String,
     overview: String,
     language: String,
+    vote: Number,
   },
   methods: {
     getImg() {
@@ -36,8 +37,17 @@ export default {
         <span v-else>unknown</span>
       </strong>
 
-      <p><strong>Voto:</strong> TEST</p>
-      <p><strong>Trama:</strong> {{ overview }}</p>
+      <div class="rating-stars d-flex mt-2">
+        <p><strong>Voto:</strong></p>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+      </div>
+
+      <p v-if="overview"><strong>Trama:</strong> {{ overview }}</p>
+      <p v-else><strong>Trama:</strong> NON PRESENTE</p>
     </div>
   </div>
 </template>

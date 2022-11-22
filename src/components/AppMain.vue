@@ -31,6 +31,7 @@ export default {
             :titleMovies="card.title"
             :overview="card.overview"
             :language="card.original_language"
+            :vote="card.vote_average"
           />
         </div>
       </div>
@@ -50,6 +51,7 @@ export default {
             :titleSeries="card.original_name"
             :overview="card.overview"
             :language="card.original_language"
+            :vote="card.vote_average"
           />
         </div>
       </div>
