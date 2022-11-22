@@ -6,29 +6,23 @@ export default {
     StarRating,
   },
   props: {
-    image: String,
-    titleSeries: String,
-    titleMovies: String,
-    originalTitle: String,
-    overview: String,
-    language: String,
-    vote: Number,
+    card: Object,
   },
   methods: {
     getImg() {
-      if (this.image == null) {
+      if (this.card.poster_path == null) {
         return "https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg";
       }
-      return "https://image.tmdb.org/t/p/original/" + this.image;
+      return "https://image.tmdb.org/t/p/original/" + this.card.poster_path;
     },
     getRating() {
-      return this.vote / 2;
+      return this.card.vote_average / 2;
     },
     getFlags() {
-      if (this.language === "en") return "fi fi-gb";
-      else if (this.language === "it") return "fi fi-it";
-      else if (this.language === "de") return "fi fi-de";
-      else if (this.language === "fr") return "fi fi-fr";
+      if (this.card.language === "en") return "fi fi-gb";
+      else if (this.card.language === "it") return "fi fi-it";
+      else if (this.card.language === "de") return "fi fi-de";
+      else if (this.card.language === "fr") return "fi fi-fr";
       else return "fi fi-xx";
     },
   },
@@ -39,10 +33,10 @@ export default {
   <div class="cp-card">
     <img :src="getImg()" alt="" />
     <div class="info-box">
-      <p><strong>Titolo:</strong>{{ titleSeries || titleMovies }}</p>
+      <p><strong>Titolo:</strong>{{ card.title || card.original_name }}</p>
 
-      <p v-show="originalTitle">
-        <strong>Titolo originale:</strong>{{ originalTitle }}
+      <p v-show="card.original_title">
+        <strong>Titolo originale:</strong>{{ card.original_title }}
       </p>
 
       <!-- white flag if flag doesn't exists -->
@@ -63,7 +57,7 @@ export default {
         </star-rating>
       </div>
 
-      <p><strong>Trama:</strong> {{ overview || "NON PRESENTE" }}</p>
+      <p><strong>Trama:</strong> {{ card.overview || "NON PRESENTE" }}</p>
     </div>
   </div>
 </template>

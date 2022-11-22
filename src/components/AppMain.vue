@@ -28,14 +28,7 @@ export default {
           v-for="(card, index) in store.moviesData"
           :key="index"
         >
-          <AppCard
-            :image="card.poster_path"
-            :originalTitle="card.original_title"
-            :titleMovies="card.title"
-            :overview="card.overview"
-            :language="card.original_language"
-            :vote="card.vote_average"
-          />
+          <AppCard :card="card" />
         </div>
       </div>
     </div>
@@ -51,13 +44,7 @@ export default {
           v-for="(card, index) in store.tvSeriesData"
           :key="index"
         >
-          <AppCard
-            :image="card.poster_path"
-            :titleSeries="card.original_name"
-            :overview="card.overview"
-            :language="card.original_language"
-            :vote="card.vote_average"
-          />
+          <AppCard :card="card" />
         </div>
       </div>
     </div>
