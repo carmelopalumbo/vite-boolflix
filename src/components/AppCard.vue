@@ -117,7 +117,7 @@ export default {
     width: 100%;
     height: 100%;
     cursor: pointer;
-    border: 2px solid $primary-color;
+    box-shadow: 0px 0px 17px 5px $primary-color;
     border-radius: 7px;
   }
   .info-box {
@@ -127,7 +127,6 @@ export default {
     width: 100%;
     height: 100%;
     background-color: darken($secondary-color, 5%);
-    border: 2px solid $primary-color;
     border-radius: 7px;
     cursor: pointer;
     opacity: 0;
