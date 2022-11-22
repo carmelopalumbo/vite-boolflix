@@ -22,7 +22,7 @@ export default {
       return "https://image.tmdb.org/t/p/w300/" + this.image;
     },
     getRating() {
-      return Math.ceil(this.vote / 2);
+      return this.vote / 2;
     },
     getFlags() {
       if (this.language === "en") return "fi fi-gb";
@@ -54,6 +54,7 @@ export default {
           :star-size="15"
           :rating="getRating()"
           :read-only="true"
+          :increment="0.5"
           :active-color="['#DC1A28']"
           :show-rating="false"
           :glow="2"

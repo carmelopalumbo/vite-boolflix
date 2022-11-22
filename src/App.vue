@@ -19,7 +19,13 @@ export default {
   },
 
   methods: {
-    getApis() {
+    getApis(isWelcome) {
+      if (isWelcome) {
+        store.apiUrlMovies = "https://api.themoviedb.org/3/movie/popular";
+      } else {
+        store.apiUrlMovies = "https://api.themoviedb.org/3/search/movie";
+      }
+
       //movies
       axios
         .get(store.apiUrlMovies, {
@@ -38,34 +44,36 @@ export default {
           console.log("ERROR!");
         });
 
-      //tvseries
-      axios
-        .get(store.apiUrlSeries, {
-          params: {
-            api_key: store.api_key,
-            query: store.query,
-            language: store.language,
-          },
-        })
-        .then((result) => {
-          store.tvSeriesData = [];
-          store.tvSeriesData = result.data.results;
-        })
+      if (!isWelcome) {
+        //tvseries
+        axios
+          .get(store.apiUrlSeries, {
+            params: {
+              api_key: store.api_key,
+              query: store.query,
+              language: store.language,
+            },
+          })
+          .then((result) => {
+            store.tvSeriesData = [];
+            store.tvSeriesData = result.data.results;
+          })
 
-        .catch((error) => {
-          console.log("ERROR!");
-        });
+          .catch((error) => {
+            console.log("ERROR!");
+          });
+      }
     },
   },
 
   mounted() {
-    //this.getApis();
+    this.getApis(true);
   },
 };
 </script>
 
 <template>
-  <AppHeader @searchButton="getApis()" />
+  <AppHeader @searchButton="getApis(false)" />
   <AppMain />
   <AppFooter />
 </template>
