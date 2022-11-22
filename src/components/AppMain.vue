@@ -36,7 +36,7 @@ export default {
     <!-- tv series -->
     <div class="container pt-5" v-if="store.tvSeriesData.length > 0">
       <h2 class="ps-4 fs-1 py-2" v-if="!store.default">
-        HO TROVATO {{ store.tvSeriesData.length }} FILM
+        HO TROVATO {{ store.tvSeriesData.length }} SERIE TV
       </h2>
       <h2 class="ps-4 fs-1 py-2" v-else>SERIE TV POPOLARI ADESSO!</h2>
       <div class="row">
