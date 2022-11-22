@@ -1,7 +1,14 @@
 <script>
 import StarRating from "vue-star-rating";
+import axios from "axios";
+import { store } from "../data/store.js";
 export default {
   name: "AppCard",
+  data() {
+    return {
+      actors: [],
+    };
+  },
   components: {
     StarRating,
   },
@@ -27,12 +34,25 @@ export default {
       else if (this.card.original_language === "ja") return "fi fi-jp";
       else return "fi fi-xx";
     },
+    getActors() {
+      axios
+        .get(
+          `https://api.themoviedb.org/3/movie/${this.card.id}/credits?api_key=${store.api_key}&language=${store.language}`
+        )
+        .then((result) => {
+          this.actors = result.data.cast;
+          console.log(this.actors);
+        })
+        .catch((error) => {
+          console.log("ERROR!");
+        });
+    },
   },
 };
 </script>
 
 <template>
-  <div class="cp-card">
+  <div class="cp-card" @mouseover="getActors()">
     <img :src="getImg()" alt="" />
     <div class="info-box">
       <p><strong>Titolo:</strong>{{ card.title || card.original_name }}</p>
@@ -41,6 +61,18 @@ export default {
         <strong>Titolo originale:</strong>{{ card.original_title }}
       </p>
 
+      <div class="main-actors" v-if="actors.length != 0">
+        <strong>Attori principali:</strong>
+        <ul>
+          <li
+            v-for="(actor, index) in actors.slice(0, 5)"
+            :key="index"
+            class="text-white"
+          >
+            {{ actor.name }}
+          </li>
+        </ul>
+      </div>
       <!-- white flag if flag doesn't exists -->
       <strong>
         LINGUA:
@@ -108,6 +140,18 @@ export default {
     }
     p {
       color: white;
+    }
+
+    .main-actors {
+      ul {
+        list-style: none;
+        li {
+          font-size: 0.8rem;
+          &::before {
+            content: "🔻";
+          }
+        }
+      }
     }
   }
 }
