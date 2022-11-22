@@ -20,16 +20,16 @@ export default {
 
   methods: {
     getApis(isWelcome) {
+      store.isLoadFilm = false;
+      store.isLoadTV = false;
       if (isWelcome) {
         store.apiUrlMovies = "https://api.themoviedb.org/3/movie/popular";
-        store.isLoadTV = true;
+        store.apiUrlSeries = "https://api.themoviedb.org/3/tv/popular";
         store.default = true;
       } else {
         if (store.query === "") return;
         store.apiUrlMovies = "https://api.themoviedb.org/3/search/movie";
         store.default = false;
-        store.isLoadFilm = false;
-        store.isLoadTV = false;
       }
 
       //movies
@@ -52,26 +52,24 @@ export default {
           console.log("ERROR!");
         });
 
-      if (!isWelcome) {
-        //tvseries
-        axios
-          .get(store.apiUrlSeries, {
-            params: {
-              api_key: store.api_key,
-              query: store.query,
-              language: store.language,
-            },
-          })
-          .then((result) => {
-            store.tvSeriesData = [];
-            store.tvSeriesData = result.data.results;
-            store.isLoadTV = true;
-          })
+      //tvseries
+      axios
+        .get(store.apiUrlSeries, {
+          params: {
+            api_key: store.api_key,
+            query: store.query,
+            language: store.language,
+          },
+        })
+        .then((result) => {
+          store.tvSeriesData = [];
+          store.tvSeriesData = result.data.results;
+          store.isLoadTV = true;
+        })
 
-          .catch((error) => {
-            console.log("ERROR!");
-          });
-      }
+        .catch((error) => {
+          console.log("ERROR!");
+        });
     },
   },
 
