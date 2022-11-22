@@ -15,10 +15,10 @@ export default {
   <header>
     <div class="container">
       <div class="row d-flex align-items-center py-5">
-        <div class="col-7">
+        <div class="col-lg-7 col-md-5 col-sm-5">
           <img src="/logo-boolflix.png" alt="logo" />
         </div>
-        <div class="col-3">
+        <div class="col-lg-3 col-md-4 col-sm-5">
           <div class="input-group flex-nowrap">
             <input
               type="text"
@@ -31,15 +31,13 @@ export default {
             />
           </div>
         </div>
-        <div class="col-2">
+        <div class="col-lg-1 col-md-2 text-center col-sm-1">
           <button type="button" class="btn" @click="$emit('searchButton')">
             CERCA
           </button>
-          <button
-            type="button"
-            class="btn ms-2"
-            @click="$emit('defaultButton')"
-          >
+        </div>
+        <div class="col-lg-1 col-md-1 d-sm-none d-md-inline-block">
+          <button type="button" class="btn" @click="$emit('defaultButton')">
             POPOLARI
           </button>
         </div>

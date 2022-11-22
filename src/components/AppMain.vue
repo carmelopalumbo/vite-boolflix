@@ -24,7 +24,7 @@ export default {
       <h2 class="ps-4 fs-1 py-2" v-else>FILM POPOLARI ADESSO!</h2>
       <div class="row">
         <div
-          class="col-3 py-4"
+          class="col-lg-3 col-md-4 col-sm-6 py-4"
           v-for="(card, index) in store.moviesData"
           :key="index"
         >
@@ -41,7 +41,7 @@ export default {
       <h2 class="ps-4 fs-1 py-2" v-else>SERIE TV POPOLARI ADESSO!</h2>
       <div class="row">
         <div
-          class="col-3 py-4"
+          class="col-lg-3 col-md-4 col-sm-6 py-4"
           v-for="(card, index) in store.tvSeriesData"
           :key="index"
         >
