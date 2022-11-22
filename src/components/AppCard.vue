@@ -19,10 +19,12 @@ export default {
       return this.card.vote_average / 2;
     },
     getFlags() {
-      if (this.card.language === "en") return "fi fi-gb";
-      else if (this.card.language === "it") return "fi fi-it";
-      else if (this.card.language === "de") return "fi fi-de";
-      else if (this.card.language === "fr") return "fi fi-fr";
+      if (this.card.original_language === "en") return "fi fi-gb";
+      else if (this.card.original_language === "it") return "fi fi-it";
+      else if (this.card.original_language === "fr") return "fi fi-fr";
+      else if (this.card.original_language === "es") return "fi fi-es";
+      else if (this.card.original_language === "de") return "fi fi-de";
+      else if (this.card.original_language === "ja") return "fi fi-jp";
       else return "fi fi-xx";
     },
   },
@@ -40,7 +42,10 @@ export default {
       </p>
 
       <!-- white flag if flag doesn't exists -->
-      <strong> LINGUA: <span :class="getFlags()"></span> </strong>
+      <strong>
+        LINGUA:
+        <span :class="getFlags()"></span>
+      </strong>
 
       <div class="rating-stars d-flex">
         <p class="pt-3"><strong>Voto:</strong></p>

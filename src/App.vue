@@ -26,12 +26,10 @@ export default {
         store.apiUrlMovies = "https://api.themoviedb.org/3/movie/popular";
         store.apiUrlSeries = "https://api.themoviedb.org/3/tv/popular";
         store.default = true;
-      } else {
-        if (store.query != "") {
-          store.apiUrlMovies = "https://api.themoviedb.org/3/search/movie";
-          store.apiUrlSeries = "https://api.themoviedb.org/3/search/tv";
-          store.default = false;
-        }
+      } else if (store.query != "") {
+        store.apiUrlMovies = "https://api.themoviedb.org/3/search/movie";
+        store.apiUrlSeries = "https://api.themoviedb.org/3/search/tv";
+        store.default = false;
       }
 
       //movies
