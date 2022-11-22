@@ -23,6 +23,7 @@ export default {
       if (isWelcome) {
         store.apiUrlMovies = "https://api.themoviedb.org/3/movie/popular";
         store.isLoadTV = true;
+        store.default = true;
       } else {
         if (store.query === "") return;
         store.apiUrlMovies = "https://api.themoviedb.org/3/search/movie";

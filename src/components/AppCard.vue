@@ -19,7 +19,7 @@ export default {
       if (this.image == null) {
         return "https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg";
       }
-      return "https://image.tmdb.org/t/p/w300/" + this.image;
+      return "https://image.tmdb.org/t/p/original/" + this.image;
     },
     getRating() {
       return this.vote / 2;
