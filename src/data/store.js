@@ -10,5 +10,5 @@ export const store = reactive({
    api_key: '10bde6ce278b4530139da29ead0c56de',
    query: '',
    language: 'it-IT',
-   default: true
+   default: true,
 });
