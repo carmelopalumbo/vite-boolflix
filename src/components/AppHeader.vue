@@ -55,6 +55,7 @@ header {
   .form-control {
     background-color: transparent;
     border: 1px solid $primary-color;
+    border-radius: 25px;
     color: rgba(255, 255, 255, 0.925);
     &:focus {
       border-color: $primary-color;
