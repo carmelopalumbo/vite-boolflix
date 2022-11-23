@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     getImg(slide) {
-      return "https://image.tmdb.org/t/p/original/" + slide.poster_path;
+      return "https://image.tmdb.org/t/p/original/" + slide.backdrop_path;
     },
     getSlider() {},
   },
@@ -55,7 +55,7 @@ export default {
       <swiper-slide
         v-for="(slide, index) in store.moviesData.slice(0, 10)"
         :key="index"
-        v-show="slide.poster_path"
+        v-show="slide.backdrop_path"
       >
         <img :src="getImg(slide)" alt="" />
       </swiper-slide>
@@ -66,9 +66,6 @@ export default {
 <style lang="scss" scoped>
 @use "../style/partials/var.scss" as *;
 .cp-container {
-  width: 80%;
-  margin: 0 auto;
-  box-shadow: 0px 0px 17px 5px black;
   img {
     width: 100%;
     height: 500px;
