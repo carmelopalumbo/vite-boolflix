@@ -153,4 +153,11 @@ export default {
     }
   }
 }
+
+@media (max-width: 780px) {
+  .cp-card {
+    width: 200px;
+    height: 350px;
+  }
+}
 </style>
