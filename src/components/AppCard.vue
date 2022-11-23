@@ -64,7 +64,7 @@ export default {
 </script>
 
 <template>
-  <div class="cp-card" @mouseover="getActors()">
+  <div class="cp-card m-auto" @mouseover="getActors()">
     <img :src="getImg()" alt="" />
     <div class="info-box">
       <p><strong>Titolo:</strong>{{ card.title || card.original_name }}</p>

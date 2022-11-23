@@ -53,7 +53,7 @@ export default {
       class="mySwiper"
     >
       <swiper-slide
-        v-for="(slide, index) in store.moviesData.slice(0, 6)"
+        v-for="(slide, index) in store.moviesData.slice(0, 10)"
         :key="index"
         v-show="slide.poster_path"
       >
