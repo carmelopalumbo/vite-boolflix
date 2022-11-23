@@ -41,7 +41,6 @@ export default {
         )
         .then((result) => {
           this.actors = result.data.cast;
-          console.log(this.actors);
         })
         .catch((error) => {
           console.log("ERROR!");

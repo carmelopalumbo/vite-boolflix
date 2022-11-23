@@ -14,6 +14,7 @@
     "axios": "^1.1.3",
     "bootstrap": "^5.2.2",
     "flag-icons": "^6.6.6",
+    "swiper": "^8.4.5",
     "vue": "^3.2.41",
     "vue-star-rating": "^2.1.0"
   },

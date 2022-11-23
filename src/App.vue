@@ -2,6 +2,7 @@
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
 import AppMain from "./components/AppMain.vue";
+import AppJumbotron from "./components/AppJumbotron.vue";
 import axios from "axios";
 import { store } from "./data/store.js";
 
@@ -11,6 +12,7 @@ export default {
     AppFooter,
     AppHeader,
     AppMain,
+    AppJumbotron,
   },
   data() {
     return {
@@ -82,6 +84,7 @@ export default {
 
 <template>
   <AppHeader @searchButton="getApis(false)" @defaultButton="getApis(true)" />
+  <AppJumbotron />
   <AppMain />
   <AppFooter />
 </template>
