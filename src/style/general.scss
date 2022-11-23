@@ -32,3 +32,11 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background: darken($primary-color, 15%); 
   }
+
+  //firefox scrollbar
+
+  html,body,main{
+    scrollbar-width: thin;
+    scroll-padding-block-start: 4px;
+    scrollbar-color: $primary-color transparent ;
+}
