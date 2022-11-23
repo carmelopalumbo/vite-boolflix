@@ -69,7 +69,7 @@ export default {
     <div class="info-box">
       <p><strong>Titolo:</strong>{{ card.title || card.original_name }}</p>
 
-      <p v-show="card.original_title">
+      <p v-show="card.original_title != card.title">
         <strong>Titolo originale:</strong>{{ card.original_title }}
       </p>
 
