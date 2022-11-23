@@ -64,7 +64,7 @@ export default {
   </main>
 
   <!-- loading -->
-  <div class="load-container text-center" v-else>
+  <div class="load-container text-center py-4" v-else>
     <AppLoader />
   </div>
 </template>
