@@ -52,10 +52,19 @@ header {
   img {
     width: 200px;
   }
-  .form-control:focus {
-    border-color: $primary-color;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
-      0 0 8px rgba(255, 0, 0, 0.6);
+  .form-control {
+    background-color: transparent;
+    border: 1px solid $primary-color;
+    color: rgba(255, 255, 255, 0.925);
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 15px $primary-color;
+    }
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: rgba(255, 255, 255, 0.445);
+      opacity: 1; /* Firefox */
+    }
   }
   button {
     background-color: $primary-color;
