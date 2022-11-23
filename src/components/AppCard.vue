@@ -109,10 +109,17 @@ export default {
   transition: 0.3s all;
   &:hover .info-box {
     opacity: 0.97;
+    box-shadow: 0px 0px 17px 5px white;
   }
+
   &:hover {
     transform: scale(1.05);
   }
+
+  &:hover img {
+    box-shadow: none;
+  }
+
   img {
     width: 100%;
     height: 100%;
