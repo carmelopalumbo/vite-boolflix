@@ -106,8 +106,10 @@ export default {
         </star-rating>
       </div>
 
-      <!-- to add a little padding bottom -->
-      <p><strong>Trama:</strong> {{ card.overview || "NON PRESENTE" }}</p>
+      <div class="overview">
+        <strong>Trama:</strong>
+        <p class="ps-3">{{ card.overview || "NON PRESENTE" }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -168,6 +170,11 @@ export default {
             content: "🔻";
           }
         }
+      }
+    }
+    .overview {
+      p {
+        font-size: 0.85rem;
       }
     }
   }
