@@ -68,11 +68,12 @@ export default {
 .cp-container {
   width: 80%;
   margin: 0 auto;
+  box-shadow: 0px 0px 17px 5px black;
   img {
     width: 100%;
     height: 500px;
     border-radius: 10px;
-    box-shadow: 0px 0px 15px 2px $primary-color;
+    box-shadow: 0px 0px 30px 2px $primary-color;
   }
 }
 </style>
