@@ -35,16 +35,29 @@ export default {
       else return "fi fi-xx";
     },
     getActors() {
-      axios
-        .get(
-          `https://api.themoviedb.org/3/movie/${this.card.id}/credits?api_key=${store.api_key}&language=${store.language}`
-        )
-        .then((result) => {
-          this.actors = result.data.cast;
-        })
-        .catch((error) => {
-          console.log("ERROR!");
-        });
+      if (this.card.title) {
+        axios
+          .get(
+            `https://api.themoviedb.org/3/movie/${this.card.id}/credits?api_key=${store.api_key}&language=${store.language}`
+          )
+          .then((result) => {
+            this.actors = result.data.cast;
+          })
+          .catch((error) => {
+            console.log("ERROR!");
+          });
+      } else {
+        axios
+          .get(
+            `https://api.themoviedb.org/3/tv/${this.card.id}/credits?api_key=${store.api_key}&language=${store.language}`
+          )
+          .then((result) => {
+            this.actors = result.data.cast;
+          })
+          .catch((error) => {
+            console.log("ERROR!");
+          });
+      }
     },
   },
 };
