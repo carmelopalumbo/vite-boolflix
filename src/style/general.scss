@@ -11,3 +11,24 @@ body {
 .swiper-pagination-bullet-active {
     background: $primary-color;
   }
+
+
+//   chrome scrollbar
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: $primary-color; 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: darken($primary-color, 15%); 
+  }
